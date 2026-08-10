@@ -14,7 +14,10 @@ rm -rf "$OUT_DIR"
 mkdir -p "$UNPACKED"
 
 # Extension runtime only — no docs, scripts, .cursor, .git
-cp manifest.json background.js popup.html popup.css popup.js "$UNPACKED/"
+cp manifest.json background.js \
+  popup.html popup.css popup.js \
+  print.html print.css print.js \
+  "$UNPACKED/"
 cp -R src icons "$UNPACKED/"
 
 (cd "$UNPACKED" && zip -r "$ZIP" .)

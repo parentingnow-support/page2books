@@ -18,11 +18,11 @@
 ### In scope (Phase 1)
 
 - [x] MV3 popup scaffold + “Extract from current page”
-- [ ] 페이지에서 품명/금액/수량 **후보** 추출 (휴리스틱 → 사용자 편집)
-- [ ] 기본 송장 초안 편집 (발신 · 수신 · 품목 · 금액 · 세금)
-- [ ] PDF 내보내기 (`window.print()` 우선)
-- [ ] `node scripts/selfcheck.mjs` PASS
-- [ ] README: 30초 Load unpacked
+- [x] 페이지에서 품명/금액/수량 **후보** 추출 (휴리스틱 → 사용자 편집)
+- [x] 기본 송장 초안 편집 (발신 · 수신 · 품목 · 금액 · 세금)
+- [x] PDF 내보내기 (`window.print()` 우선)
+- [x] `node scripts/selfcheck.mjs` PASS
+- [x] README: 30초 Load unpacked
 
 ### Out of Scope (Phase 1)
 

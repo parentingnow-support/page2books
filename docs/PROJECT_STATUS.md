@@ -4,21 +4,20 @@
 
 | | |
 | --- | --- |
-| **Phase** | Bootstrap done → Phase 1 build |
+| **Phase** | Phase 1 build (extract → draft → PDF) |
 | **Stack** | `mv3-popup` |
-| **Next** | Invoice draft UI + PDF path; tighten extract heuristics |
+| **Next** | Soft launch / demo screenshot / CWS when ready |
 | **Blockers** | — |
 
 ## Done
 
-- [x] Factory copy → `/Volumes/.../vibe-coding/page2invoice`
-- [x] Placeholders → Page2Invoice
-- [x] Stack switched to popup + `activeTab`/`scripting`
-- [x] Seed decisions / PRD / funnel / privacy from app-school GO-MVP
+- [x] Factory bootstrap + public parentingnow-support repo
+- [x] Extract candidates from active tab
+- [x] Editable invoice draft UI
+- [x] Print / Save as PDF view
+- [x] `node scripts/selfcheck.mjs` + `test_phase1.mjs`
 
 ## Now
 
-- [ ] Phase 1: editable invoice draft from extract candidates
-- [ ] PDF export (print CSS)
 - [ ] Demo screenshot → `docs/demo.png`
 - [ ] Soft launch ([`FUNNEL.md`](./FUNNEL.md))

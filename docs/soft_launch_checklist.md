@@ -14,13 +14,13 @@
 ### Repo
 
 - [x] `YOUR_*` placeholders gone from user-facing strings
-- [ ] Phase 1 DoD met ([`develop_plan.md`](./develop_plan.md))
-- [ ] `node scripts/selfcheck.mjs` PASS
+- [x] Phase 1 DoD met ([`develop_plan.md`](./develop_plan.md))
+- [x] `node scripts/selfcheck.mjs` PASS
 - [ ] Load unpacked smoke on a **real** target page
-- [ ] README 30-second install path
+- [x] README 30-second install path
 - [ ] `docs/demo.png` (or equivalent)
-- [ ] `docs/privacy.md` matches manifest permissions
-- [ ] `.env` not committed; `.gitignore` covers secrets
+- [x] `docs/privacy.md` matches manifest permissions
+- [x] `.env` not committed; `.gitignore` covers secrets
 - [ ] Icons not leftover solid placeholders (or accept as temp)
 
 ### Console (optional this week)

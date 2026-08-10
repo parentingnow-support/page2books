@@ -9,7 +9,7 @@
   <body>
     <header>
       <h1>Page2Invoice</h1>
-      <p class="sub">Turn this page into an invoice draft.</p>
+      <p class="sub">Extract → edit → PDF</p>
     </header>
 
     <section id="status" class="card">
@@ -18,9 +18,36 @@
       <button id="extractBtn" type="button">Extract from current page</button>
     </section>
 
-    <section id="result" class="card hidden">
-      <h2 id="resultTitle">Candidates</h2>
-      <pre id="resultBody" class="mono"></pre>
+    <section id="draft" class="card hidden">
+      <h2>Invoice draft</h2>
+      <div class="row2">
+        <label>Number<input id="invNumber" type="text" /></label>
+        <label>Date<input id="invDate" type="date" /></label>
+      </div>
+      <label>From<textarea id="invFrom" rows="2" placeholder="Your name / business"></textarea></label>
+      <label>Bill to<textarea id="invTo" rows="2" placeholder="Client name"></textarea></label>
+      <div class="row2">
+        <label>Currency
+          <select id="invCurrency">
+            <option value="KRW">KRW</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="OTHER">OTHER</option>
+          </select>
+        </label>
+        <label>Tax %<input id="invTax" type="number" min="0" step="0.1" value="0" /></label>
+      </div>
+
+      <div class="lines-head">
+        <span>Line items</span>
+        <button id="addLineBtn" type="button" class="btn-secondary">Add line</button>
+      </div>
+      <div id="lines"></div>
+
+      <div id="totals" class="totals"></div>
+      <label>Notes<textarea id="invNotes" rows="2"></textarea></label>
+
+      <button id="pdfBtn" type="button">Export PDF (print)</button>
     </section>
 
     <script type="module" src="popup.js"></script>

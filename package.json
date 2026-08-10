@@ -6,6 +6,9 @@
   "description": "Turn the current page into an invoice draft in one click.",
   "scripts": {
     "selfcheck": "node scripts/selfcheck.mjs",
+    "test": "node scripts/selfcheck.mjs && node scripts/test_phase1.mjs",
+    "test:phase1": "node scripts/test_phase1.mjs",
+    "smoke": "node scripts/smoke_chrome.mjs",
     "pack": "bash scripts/pack-cws.sh"
   }
 }

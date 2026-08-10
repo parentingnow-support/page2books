@@ -7,6 +7,7 @@ Page2Invoice is a Chrome extension that turns the current page into an invoice d
 ## What we access
 
 - **Active tab** — when you click Extract, we read the current page DOM in that tab to find invoice candidates (title, amounts, etc.).
+- **Session storage** — the invoice draft is kept briefly in Chrome session storage so the print/PDF tab can render it. It is not synced to the cloud.
 - **Network** — none in Phase 1 (no `host_permissions`).
 
 ## What we do not do

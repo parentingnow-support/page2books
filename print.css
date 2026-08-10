@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f4f5f3;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 16px;
+  background: #fff;
+  border-bottom: 1px solid #e2e4e0;
+}
+
+.toolbar button {
+  padding: 8px 12px;
+  border: 1px solid #2d6a4f;
+  border-radius: 6px;
+  background: #2d6a4f;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.toolbar .hint {
+  color: #6b6b6b;
+  font-size: 13px;
+}
+
+#doc {
+  background: #fff;
+}
+
+#doc iframe {
+  width: 100%;
+  min-height: 90vh;
+  border: 0;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}
