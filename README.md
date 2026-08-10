@@ -2,9 +2,9 @@
 
 [![Tip on Gumroad · ~$5](docs/gumroad-tip-banner.png)](https://parentingnow.gumroad.com/l/tip)
 
-Chrome extension: turn the **current page** into an **invoice draft** in one click.
+Chrome extension: turn the **current page** into an **invoice draft** in one click — no account.
 
-Extract item/amount candidates from the page you’re viewing, edit a simple invoice, then export PDF — no account.
+Extract title/amount candidates from the page you’re viewing, edit the draft, then export PDF from Chrome’s print dialog.
 
 Privacy: [`docs/privacy.md`](docs/privacy.md)
 
@@ -13,8 +13,8 @@ Privacy: [`docs/privacy.md`](docs/privacy.md)
 1. Clone this repo (or [download ZIP](https://github.com/parentingnow-support/page2invoice/archive/refs/heads/main.zip) and unzip).
 2. Open `chrome://extensions` → enable **Developer mode**.
 3. **Load unpacked** → select this folder (the one with `manifest.json`).
-4. Open a normal product / estimate / email page (or `fixtures/demo-product.html` via a local static server).
-5. Click the **Page2Invoice** toolbar icon → **Extract from current page** → edit → **Export PDF (print)**.
+4. Open a product, estimate, or quote page.
+5. Click the **Page2Invoice** toolbar icon → **Extract from current page** → edit → **Export PDF (print)** → choose **Save as PDF**.
 
 ```bash
 git clone https://github.com/parentingnow-support/page2invoice.git
@@ -22,16 +22,21 @@ cd page2invoice
 # then Load unpacked → this directory
 ```
 
-## What works today
+Optional check (no Chrome): `npm test`
+
+## What you get
 
 - One-click extract of title / amount candidates from the active tab  
-- Editable invoice draft (from, bill-to, lines, tax, notes)  
-- PDF via Chrome print dialog (**Save as PDF**)
+- Editable invoice draft (from, bill-to, line items, tax, notes)  
+- PDF export via Chrome print (**Save as PDF**)
 
-## Coming next
+## Not yet
 
-Chrome Web Store listing · better site-specific parsers
+Chrome Web Store listing · perfect site-specific parsers · accounts / sync · Pro
 
-## Not planned for now
+## Develop
 
-Accounts · sync · analytics · Pro paywall
+```bash
+npm test                 # selfcheck + phase1 fixtures
+npm run smoke            # Chrome + demo product page extract
+```
