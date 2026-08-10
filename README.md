@@ -1,6 +1,6 @@
 # Page2Invoice
 
-[![Tip on Gumroad · ~$5](docs/gumroad-tip-banner.svg)](https://parentingnow.gumroad.com/l/tip)
+[![Tip on Gumroad · ~$5](docs/gumroad-tip-banner.png)](https://parentingnow.gumroad.com/l/tip)
 
 Chrome extension: turn the **current page** into an **invoice draft** in one click — extract items/amounts, fill a simple template, export PDF.
 
