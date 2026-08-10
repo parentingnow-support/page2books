@@ -1,5 +1,7 @@
 # Page2Invoice
 
+[![Tip on Gumroad · ~$5](docs/gumroad-tip-banner.svg)](https://parentingnow.gumroad.com/l/tip)
+
 Chrome extension: turn the **current page** into an **invoice draft** in one click — extract items/amounts, fill a simple template, export PDF.
 
 App-school source: `cycles/2026-08-05-웹페이지원클릭송장생성확장` (GO-MVP).
@@ -49,7 +51,6 @@ Account / sync · multi-currency polish · Chrome Web Store listing · Pro
 node scripts/selfcheck.mjs
 ```
 
-Public repo: [parentingnow-support/page2invoice](https://github.com/parentingnow-support/page2invoice)  
-Tip: [Gumroad ~$5](https://parentingnow.gumroad.com/l/tip)
+Public repo: [parentingnow-support/page2invoice](https://github.com/parentingnow-support/page2invoice)
 
 **Metric:** 7 days → ~5 people who actually generated an invoice (not install count).
