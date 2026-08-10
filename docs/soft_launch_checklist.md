@@ -25,6 +25,6 @@
 
 ### Console (optional this week)
 
-- [ ] Public GitHub repo + push
-- [ ] Gumroad tip product (can wait until after first signals)
-- [ ] CWS $5 registration (can wait; unpacked is enough to launch)
+- [x] Public GitHub repo + push
+- [x] Gumroad tip product (`parentingnow.gumroad.com/l/tip`)
+- [x] CWS submit — pending review (`alghfalfbeglnoffbmcjmongekjecpne`)

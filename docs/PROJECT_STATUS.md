@@ -4,10 +4,10 @@
 
 | | |
 | --- | --- |
-| **Phase** | Phase 1 build (extract → draft → PDF) |
+| **Phase** | Phase 1 — CWS pending review |
 | **Stack** | `mv3-popup` |
-| **Next** | Operator: upload zip in CWS dashboard → Submit for review |
-| **Blockers** | CWS Submit requires publisher Google account (cannot automate) |
+| **Next** | Wait for CWS approval → paste store URL into README + FUNNEL; soft launch |
+| **Blockers** | None (review queue) |
 
 ## Done
 
@@ -17,8 +17,9 @@
 - [x] Print / Save as PDF view
 - [x] `node scripts/selfcheck.mjs` + `test_phase1.mjs`
 - [x] CWS package + listing assets (`dist/page2invoice-cws.zip`, store icon, 1280×800 screenshot)
+- [x] CWS submit for review (publisher `burots`) — item `alghfalfbeglnoffbmcjmongekjecpne`, status **검토 대기 중**
 
 ## Now
 
-- [ ] CWS dashboard: New item → upload zip → listing → privacy → Submit
-- [ ] Soft launch ([`FUNNEL.md`](./FUNNEL.md)) after/with review
+- [ ] CWS approval → add store URL to README + FUNNEL
+- [ ] Soft launch ([`FUNNEL.md`](./FUNNEL.md))

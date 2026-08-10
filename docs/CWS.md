@@ -69,6 +69,16 @@ Match [`privacy.md`](./privacy.md) + `manifest.json` permissions (`activeTab`, `
 6. Free + Gumroad tip off-store → stay **non-seller** (no in-store payments)  
 7. **Submit for review**
 
+## Submission record
+
+| | |
+| --- | --- |
+| **Publisher** | `burots` (`parentingnow.support@gmail.com`) |
+| **Item ID** | `alghfalfbeglnoffbmcjmongekjecpne` |
+| **Dashboard** | [devconsole item](https://chrome.google.com/webstore/devconsole/dbd1aaf7-30a2-4f9c-a7e5-2388d2d06cf1/alghfalfbeglnoffbmcjmongekjecpne/edit) |
+| **Status** | 검토 대기 중 (submitted) |
+| **Store URL** | _(add when approved)_ `https://chromewebstore.google.com/detail/alghfalfbeglnoffbmcjmongekjecpne` |
+
 ## Operator notes
 
 - Dashboard login + Submit must be done in the publisher Google account (automation cannot finish this step).  

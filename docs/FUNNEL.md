@@ -30,8 +30,8 @@
 
 - [x] Public repo pushed (`main`) with privacy URLs
 - [ ] Community / Show-style post (draft below)
-- [ ] Optional: CWS submit ([`CWS.md`](./CWS.md))
-- [ ] Account: **non-seller** if not selling on CWS (tip via Gumroad outside store)
+- [x] CWS submit ([`CWS.md`](./CWS.md)) — pending review (`alghfalfbeglnoffbmcjmongekjecpne`)
+- [x] Account: **non-seller** (free; tip via Gumroad outside store)
 
 ### After launch
 
