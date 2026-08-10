@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page2Invoice</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Page2Invoice</h1>
+      <p class="sub">Turn this page into an invoice draft.</p>
+    </header>
+
+    <section id="status" class="card">
+      <p id="statusMsg" class="muted">Ready.</p>
+      <p id="pageUrl" class="mono"></p>
+      <button id="extractBtn" type="button">Extract from current page</button>
+    </section>
+
+    <section id="result" class="card hidden">
+      <h2 id="resultTitle">Candidates</h2>
+      <pre id="resultBody" class="mono"></pre>
+    </section>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

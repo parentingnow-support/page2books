@@ -1,0 +1,11 @@
+{
+  "name": "page2invoice",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Turn the current page into an invoice draft in one click.",
+  "scripts": {
+    "selfcheck": "node scripts/selfcheck.mjs",
+    "pack": "bash scripts/pack-cws.sh"
+  }
+}
