@@ -10,9 +10,10 @@ bash scripts/pack-cws.sh
 # → dist/page2invoice-cws.zip
 ```
 
-Upload the zip only (runtime files). Do **not** include `docs/`, `.cursor/`, `scripts/`, `.git/`.
+Upload **`dist/page2invoice-cws.zip`** (also copied to Desktop as `page2invoice-cws.zip`).  
+Runtime files only — no `docs/`, `.cursor/`, `scripts/`, `.git/`.
 
-## Store listing (English) — fill
+## Store listing (English)
 
 **Name:** Page2Invoice  
 
@@ -23,59 +24,60 @@ Turn the current page into an invoice draft in one click.
 
 **Detailed description:**
 ```
-Page2Invoice extracts invoice candidates from the page you are viewing.
+Page2Invoice turns the page you’re viewing into an editable invoice draft — then export PDF. No account.
 
-• One-click extract from the active tab
-• Editable invoice draft
-• PDF export without an account
+• One-click extract of title and amount candidates from the active tab
+• Edit from / bill-to / line items / tax / notes
+• Export PDF via Chrome print (Save as PDF)
 
 How to use:
-1. Click the toolbar icon to open the popup
+1. Click the Page2Invoice toolbar icon
 2. Click Extract from current page
-3. Edit the draft and export PDF
+3. Edit the draft
+4. Click Export PDF (print) → Save as PDF
 
-Privacy: Page content is processed on-device for extract→draft→PDF. No accounts, no analytics SDK, no sale of data.
+Privacy: page content is processed on your device for extract → draft → PDF. No accounts, no analytics SDK, no sale of data. Drafts stay in Chrome session storage only for printing.
 ```
 
 **Category:** Productivity  
 **Language:** English  
-**Screenshots:** `docs/cws-screenshot-1280x800.png` (1280×800 or 1280×800 JPEG)  
-**Store icon (128×128):** `docs/cws-store-icon-128.png`  
+**Screenshots:** `docs/cws-screenshot-1280x800.png` (Desktop: `~/Desktop/page2invoice-cws-screenshot.png`)  
+**Store icon (128×128):** `docs/cws-store-icon-128.png` (Desktop: `~/Desktop/page2invoice-cws-icon128.png`)  
 **Official URL:** `https://github.com/parentingnow-support/page2invoice`  
 **Support URL:** `https://github.com/parentingnow-support/page2invoice/issues`  
 **Privacy policy URL:** `https://github.com/parentingnow-support/page2invoice/blob/main/docs/privacy.md`
 
-## Privacy (dashboard)
+## Privacy (dashboard) — fill
 
-Fill honestly to match [`privacy.md`](./privacy.md) and `manifest.json`:
+Match [`privacy.md`](./privacy.md) + `manifest.json` permissions (`activeTab`, `scripting`, `storage`):
 
-- **Single purpose:** one sentence
-- **sidePanel:** why
-- **tabs:** usually “active tab URL only for …”
-- **storage:** local prefs or remove permission
-- **Host permissions:** list each host and why
-- **Remote code:** No (default)
-- **Data disclosure:** only what you actually send
+- **Single purpose:** Extract invoice candidates from the active page and help the user edit/export an invoice draft as PDF on-device.
+- **activeTab:** Access the page the user is viewing only after they click Extract, to read title/amount candidates from that tab’s DOM.
+- **scripting:** Inject a one-shot extract script into the active tab when the user clicks Extract.
+- **storage:** Keep the invoice draft briefly in Chrome session storage so the print/PDF tab can render it. Not synced to a server.
+- **Host permissions:** None.
+- **Remote code:** No.
+- **Data disclosure:** None sold; no remote collection for the core flow. Processing stays on-device. (If the form asks about “website content”: yes — read from the active tab only on explicit Extract.)
 
 ## Submit checklist
 
-1. Pay $5 developer fee if first time  
-2. **New item** → Upload zip  
+1. Pay $5 developer fee if first time (same publisher as other parentingnow / burots items if already paid)  
+2. **New item** → Upload `page2invoice-cws.zip`  
 3. Store listing (name, short, detailed, screenshot, **store icon**)  
-4. Privacy practices + policy URL  
-5. Distribution: Public  
-6. If free + external tip only → stay **non-seller** (no in-store payments)  
+4. Privacy practices + policy URL above  
+5. Distribution: **Public**  
+6. Free + Gumroad tip off-store → stay **non-seller** (no in-store payments)  
 7. **Submit for review**
 
-## After submit
+## Operator notes
 
-- Paste store URL into README + launch-post comment when approved.
-- Community post can ship **before** CWS approval (unpacked install).
+- Dashboard login + Submit must be done in the publisher Google account (automation cannot finish this step).  
+- When approved: paste store URL into README + FUNNEL; update this file + `PROJECT_STATUS.md`.
 
-## Asset sizes (remember)
+## Asset sizes
 
 | Asset | Size |
 | --- | --- |
 | Store icon | 128×128 PNG |
-| Screenshot | 1280×800 (or 640×400) |
+| Screenshot | 1280×800 PNG/JPEG |
 | Toolbar icons | 16 / 48 / 128 in `icons/` |
