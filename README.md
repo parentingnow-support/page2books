@@ -2,12 +2,11 @@
 
 [![Tip on Gumroad · ~$5](docs/gumroad-tip-banner.png)](https://parentingnow.gumroad.com/l/tip)
 
-Chrome extension: turn the **current page** into an **invoice draft** in one click — extract items/amounts, fill a simple template, export PDF.
+Chrome extension: turn the **current page** into an **invoice draft** in one click.
 
-App-school source: `cycles/2026-08-05-웹페이지원클릭송장생성확장` (GO-MVP).
+Extract item/amount candidates from the page you’re viewing, edit a simple invoice, then export PDF — no account.
 
-**Phase 1 (target):** popup → extract from active tab → editable invoice draft → PDF.  
-Funnel: [`docs/FUNNEL.md`](docs/FUNNEL.md) · CWS: [`docs/CWS.md`](docs/CWS.md) · Privacy: [`docs/privacy.md`](docs/privacy.md)
+Privacy: [`docs/privacy.md`](docs/privacy.md)
 
 ## Try in ~30 seconds
 
@@ -23,34 +22,17 @@ cd page2invoice
 # then Load unpacked → this directory
 ```
 
-Optional check (no Chrome): `node scripts/selfcheck.mjs`
+## What works today
 
-## What you get (when Phase 1 lands)
+- Popup on the toolbar icon  
+- One-click extract of title / amount candidates from the active tab  
 
-- One-click extract of name / amount / qty candidates from the page DOM  
+## Coming next
+
 - Editable invoice draft (seller, buyer, line items, tax)  
-- PDF export (print or html→pdf)
+- PDF export  
+- Chrome Web Store listing  
 
-## Not yet
+## Not planned for now
 
-Account / sync · multi-currency polish · Chrome Web Store listing · Pro
-
-## Layout
-
-| Path | Role |
-|------|------|
-| `manifest.json` | MV3 + popup |
-| `background.js` | Service worker (minimal) |
-| `popup.html` / `.css` / `.js` | Extract + draft UI |
-| `src/` | Pure helpers (selfcheckable) |
-| `icons/` | Toolbar icons |
-
-## Develop
-
-```bash
-node scripts/selfcheck.mjs
-```
-
-Public repo: [parentingnow-support/page2invoice](https://github.com/parentingnow-support/page2invoice)
-
-**Metric:** 7 days → ~5 people who actually generated an invoice (not install count).
+Accounts · sync · analytics · Pro paywall
