@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if rg -qi 'Co-authored-by:[[:space:]]*Cursor|cursoragent@cursor\.com' "$1"; then
+  echo "Refuse commit: remove Co-authored-by Cursor / cursoragent trailer" >&2
+  exit 1
+fi

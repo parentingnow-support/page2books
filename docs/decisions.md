@@ -7,6 +7,16 @@
 
 ## 2026-08-10
 
+### D-03 커밋 identity = parentingnow only (확정)
+
+| | |
+| --- | --- |
+| **상태** | **확정** (2026-08-10) |
+| **결정** | 모든 커밋 author/committer = `parentingnow <315293947+parentingnow-support@users.noreply.github.com>` |
+| **이유** | 공개 레포 contributor에 `wai-khkim` / `codingwalks` / `cursoragent` 가 섞이면 안 됨 |
+| **장치** | repo-local `user.*` · `.githooks/pre-commit` · `AGENTS.md` · `.cursor/rules/00-commit-identity.mdc` |
+| **금지** | `--no-verify`로 훅 우회 (사용자가 명시할 때만) |
+
 ### D-01 스택 = Chrome MV3 Popup + on-demand extract (확정)
 
 | | |
