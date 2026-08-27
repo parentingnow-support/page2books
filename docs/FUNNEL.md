@@ -1,4 +1,4 @@
-# Funnel — Page2Invoice
+# Funnel — Page2Books
 
 ```
 인지 → 설치 → 첫 가치 1회 → 재사용 → (선택) 공유/후원 → (나중) Pro
@@ -6,7 +6,7 @@
 
 | 단계 | 채널 / 액션 |
 |------|-------------|
-| 인지 | Freelance / HN / indie communities · CWS search (“invoice”) |
+| 인지 | Freelance / HN / indie communities · CWS search (“invoice”, “expense”) |
 | 설치 | GitHub(README) 또는 Chrome Web Store |
 | 첫 가치 | Extract → draft filled → PDF once |
 | 재사용 | 매주 invoicing 할 때 같은 플로우 |
@@ -14,7 +14,7 @@
 | 나중 | Pro one-time (after ~10 real users) |
 
 **지표:** 7일 내 실제 송장 생성 ~5명 (설치 수 아님).  
-**포지션:** Web-page → invoice autofill — not another blank invoice form.
+**포지션:** Web-page → invoice or expense autofill — not another blank form or cloud receipt SaaS.
 
 ## Checklist
 
@@ -43,7 +43,7 @@
 
 **Title (≤80 chars):**
 ```
-Show HN: Page2Invoice – turn the current page into an invoice draft
+Show HN: Page2Books – invoice PDF & expense CSV from any page
 ```
 
 **Body:**
@@ -51,15 +51,15 @@ Show HN: Page2Invoice – turn the current page into an invoice draft
 Every invoicing tool wants me to re-type amounts I already see on a page.
 So I made a tiny Chrome popup that extracts candidates and drafts an invoice.
 
-Page2Invoice: open a product/estimate/email page → click Extract → edit → PDF.
+Page2Books: open a product/estimate/email page → click Extract → edit → PDF.
 No account.
 
-Repo: https://github.com/parentingnow-support/page2invoice
+Repo: https://github.com/parentingnow-support/page2books
 
 Install (unpacked until the Web Store listing is up):
 1. Clone/download the repo
 2. chrome://extensions → Developer mode → Load unpacked → folder with manifest.json
-3. Open a normal page → click the toolbar icon → Extract from current page
+3. Open a normal page → click the toolbar icon → Extract
 
 Today: extract candidates + draft + PDF. Not yet: perfect site parsers, sync, Pro.
 

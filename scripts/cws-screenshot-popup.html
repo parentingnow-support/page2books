@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Page2Books</title>
+    <link rel="stylesheet" href="../popup.css" />
+    <style>
+      body {
+        max-height: none;
+        overflow: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="../icons/icon48.png" width="28" height="28" alt="" />
+      <h1>Page2Books</h1>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Mode">
+      <button type="button" role="tab" class="tab" aria-selected="true">Invoice</button>
+      <button type="button" role="tab" class="tab" aria-selected="false">Expense</button>
+    </nav>
+
+    <section id="status" class="status">
+      <svg class="status-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+        <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.15" />
+        <path fill="currentColor" d="M11.4 5.4 7 9.8 4.6 7.4l-.8.8L7 11.4l5.2-5.2z" />
+      </svg>
+      <p id="statusMsg">Ready to extract data from this page</p>
+      <button id="extractBtn" type="button">Extract</button>
+    </section>
+
+    <section id="draft">
+      <h2>Invoice draft</h2>
+
+      <div class="parties">
+        <label>From<textarea rows="4" readonly>Your Company
+123 Business Rd.
+Seoul, 12345
+South Korea</textarea></label>
+        <label>Bill to<textarea rows="4" readonly>Customer
+456 Client St.
+Busan, 54321
+South Korea</textarea></label>
+      </div>
+
+      <div class="meta">
+        <label>Invoice #<input value="INV-20260812" readonly /></label>
+        <label>Date<input type="date" value="2026-08-12" readonly /></label>
+        <label>Tax %<input type="number" value="0" readonly /></label>
+        <label>Currency
+          <select disabled>
+            <option selected>KRW</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="section-head">
+        <span>Items</span>
+        <button type="button" class="btn-secondary">Add</button>
+      </div>
+      <div class="lines-wrap">
+        <div class="lines-head">
+          <span>Description</span>
+          <span>Qty</span>
+          <span>Unit price</span>
+          <span>Amount</span>
+          <span></span>
+        </div>
+        <div id="lines">
+          <div class="line">
+            <input class="desc" type="text" value="원목 모니터 스탠드" readonly />
+            <input class="qty" type="number" value="1" readonly />
+            <input class="price" type="number" value="32000" readonly />
+            <span class="amt">₩32,000</span>
+            <button type="button" class="remove" title="Remove line">✕</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="totals" class="totals">
+        <div><span>Subtotal</span><span>₩32,000</span></div>
+        <div><span>Tax (0%)</span><span>₩0</span></div>
+        <div class="grand"><span>Total</span><span>₩32,000</span></div>
+      </div>
+      <label class="notes">Notes<textarea rows="2" readonly>Source: https://shop.example/stand</textarea></label>
+
+      <button type="button" class="btn-pdf">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+          <path fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm0 1.5V8h4.5zM8 12h3.2a1.6 1.6 0 0 1 0 3.2H9.2V17H8zm1.2 2.2h1a.5.5 0 0 0 0-1h-1zM13 12h2.4c.9 0 1.6.7 1.6 1.6v1.8c0 .9-.7 1.6-1.6 1.6H13zm1.2 1.2v2.4h1.2a.4.4 0 0 0 .4-.4v-1.6a.4.4 0 0 0-.4-.4z" />
+        </svg>
+        Export PDF
+      </button>
+    </section>
+  </body>
+</html>

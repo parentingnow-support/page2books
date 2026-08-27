@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Page2Books — Expense tab</title>
+    <link rel="stylesheet" href="../popup.css" />
+    <style>
+      body {
+        max-height: none;
+        overflow: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="../icons/icon48.png" width="28" height="28" alt="" />
+      <h1>Page2Books</h1>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Mode">
+      <button type="button" role="tab" class="tab" aria-selected="false">Invoice</button>
+      <button type="button" role="tab" class="tab" aria-selected="true">Expense</button>
+    </nav>
+
+    <section class="status">
+      <svg class="status-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+        <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.15" />
+        <path fill="currentColor" d="M11.4 5.4 7 9.8 4.6 7.4l-.8.8L7 11.4l5.2-5.2z" />
+      </svg>
+      <p>Ready to extract data from this page</p>
+      <button type="button">Extract</button>
+    </section>
+
+    <section id="expenseDraft">
+      <h2>Expense entry</h2>
+
+      <label class="field-block"
+        >Merchant<input type="text" value="Notion Labs" readonly
+      /></label>
+
+      <div class="meta">
+        <label>Date<input type="date" value="2026-08-27" readonly /></label>
+        <label>Amount<input type="number" value="12900" readonly /></label>
+        <label>Currency
+          <select disabled>
+            <option selected>KRW</option>
+          </select>
+        </label>
+        <label>Category
+          <select disabled>
+            <option selected>SaaS / 구독</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="notes"
+        >Memo<textarea rows="2" readonly>Source: https://billing.notion.so/receipt/aug</textarea></label
+      >
+
+      <div class="action-row">
+        <button type="button" class="btn-secondary">Save</button>
+        <button type="button" class="btn-pdf">Export CSV</button>
+      </div>
+
+      <div class="section-head">
+        <span>Saved</span>
+        <span class="hint">2</span>
+      </div>
+      <div class="lines-wrap expense-lines">
+        <div class="lines-head expense-head">
+          <span>Date</span>
+          <span>Amount</span>
+          <span>Category</span>
+          <span>Merchant</span>
+          <span></span>
+        </div>
+        <div>
+          <div class="line">
+            <span>08/27</span>
+            <span class="amt">₩12,900</span>
+            <span>SaaS</span>
+            <span>Notion Labs</span>
+            <button type="button" class="remove" title="Remove">✕</button>
+          </div>
+          <div class="line">
+            <span>08/18</span>
+            <span class="amt">₩5,000</span>
+            <span>광고</span>
+            <span>Google Ads</span>
+            <button type="button" class="remove" title="Remove">✕</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

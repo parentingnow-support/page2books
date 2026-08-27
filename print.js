@@ -1,6 +1,6 @@
 import { buildDraftFromExtract, renderInvoiceHtml } from "./src/feature.js";
 
-const STORAGE_KEY = "page2invoiceDraft";
+const STORAGE_KEY = "page2booksDraft";
 
 async function main() {
   const stored = await chrome.storage.session.get(STORAGE_KEY);

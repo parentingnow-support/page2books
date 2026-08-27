@@ -92,6 +92,7 @@ function todayStamp() {
 
 /** @typedef {{ description: string, qty: number, unitPrice: number }} InvoiceLine */
 /** @typedef {{ number: string, date: string, from: string, to: string, taxPercent: number, currency: string, notes: string, lines: InvoiceLine[], sourceUrl: string }} InvoiceDraft */
+/** @typedef {{ merchant: string, date: string, amount: number, currency: string, category: string, memo: string, sourceUrl: string }} ExpenseDraft */
 
 /** @returns {InvoiceDraft} */
 export function buildDraftFromExtract(extract, opts = {}) {
@@ -115,6 +116,21 @@ export function buildDraftFromExtract(extract, opts = {}) {
         unitPrice: amount,
       },
     ],
+  };
+}
+
+/** @returns {ExpenseDraft} */
+export function buildExpenseFromExtract(extract, opts = {}) {
+  const ex = extract || {};
+  const amount = normalizeAmountToken(ex.amounts?.[0]) ?? 0;
+  return {
+    merchant: String(ex.names?.[0] || ex.title || "").slice(0, 160),
+    date: opts.date || new Date().toISOString().slice(0, 10),
+    amount,
+    currency: ex.currency || "KRW",
+    category: opts.category || "",
+    memo: ex.url ? `Source: ${ex.url}` : opts.memo || "",
+    sourceUrl: ex.url || "",
   };
 }
 

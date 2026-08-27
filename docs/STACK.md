@@ -1,4 +1,4 @@
-# Stack — Page2Invoice
+# Stack — Page2Books
 
 > Source of truth for tooling. Change only with a new `decisions.md` entry.
 
@@ -13,7 +13,7 @@
 | Bundler | **None** (Load unpacked = repo root) |
 | PDF (Phase 1) | Prefer `window.print()` / print CSS; html2pdf only if print path fails DoD |
 | Tests | `node scripts/selfcheck.mjs` (pure helpers) |
-| Package | `scripts/pack-cws.sh` → `dist/page2invoice-cws.zip` |
+| Package | `scripts/pack-cws.sh` → `dist/page2books-cws.zip` |
 
 ## Permissions (Phase 1)
 

@@ -1,4 +1,4 @@
-# Soft launch checklist — Page2Invoice
+# Soft launch checklist — Page2Books
 
 > Code/docs in repo. Publisher account + store forms = operator.
 

@@ -2,6 +2,7 @@
 /** Self-check for pure helpers (no Chrome). */
 import {
   buildDraftFromExtract,
+  buildExpenseFromExtract,
   detectCurrency,
   extractCandidatesFromText,
   formatMoney,
@@ -12,6 +13,9 @@ import {
   renderInvoiceHtml,
   summarizeUrl,
 } from "../src/feature.js";
+import { categoryLabel } from "../src/expense/categories-kr.js";
+import { expensesToCsv } from "../src/expense/csv.js";
+import { addExpenseItem, removeExpenseItem } from "../src/expense/storage.js";
 
 function assert(cond, msg) {
   if (!cond) throw new Error(msg);
@@ -65,4 +69,24 @@ assert(html.includes("Acme Desk Lamp"), "html description");
 assert(html.includes("₩49,500"), "html total");
 assert(!html.includes("<script"), "html no script");
 
-console.log("ok page2invoice selfcheck");
+const expense = buildExpenseFromExtract(extracted);
+assert(expense.amount === 45000, `expense amount ${expense.amount}`);
+assert(expense.merchant.includes("Lamp"), `expense merchant ${expense.merchant}`);
+assert(expense.memo.includes("shop.example.com"), "expense memo source");
+
+let expenseItems = addExpenseItem([], {
+  ...expense,
+  category: "saas",
+});
+assert(expenseItems.length === 1, "add expense");
+assert(expenseItems[0].id, "expense id");
+
+const csv = expensesToCsv(expenseItems, categoryLabel);
+assert(csv.startsWith("date,amount,currency"), "csv header");
+assert(csv.includes("45000"), "csv amount");
+assert(csv.includes("SaaS"), "csv category label");
+
+expenseItems = removeExpenseItem(expenseItems, expenseItems[0].id);
+assert(expenseItems.length === 0, "remove expense");
+
+console.log("ok page2books selfcheck");

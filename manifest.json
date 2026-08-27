@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Page2Invoice",
-  "version": "0.1.0",
-  "description": "Turn the current page into an invoice draft in one click.",
+  "name": "Page2Books",
+  "version": "0.2.0",
+  "description": "Invoice PDF and expense CSV from the current page — one click, no account.",
   "permissions": ["activeTab", "scripting", "storage"],
   "background": {
     "service_worker": "background.js",
@@ -10,7 +10,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Page2Invoice",
+    "default_title": "Page2Books",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",

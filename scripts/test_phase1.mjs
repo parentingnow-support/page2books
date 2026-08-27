@@ -67,4 +67,4 @@ if (failed) {
   console.error(`phase1 fixtures failed: ${failed}`);
   process.exit(1);
 }
-console.log("ok page2invoice phase1 fixtures");
+console.log("ok page2books phase1 fixtures");

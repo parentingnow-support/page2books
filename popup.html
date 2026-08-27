@@ -3,30 +3,62 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Page2Invoice</title>
+    <title>Page2Books</title>
     <link rel="stylesheet" href="popup.css" />
   </head>
   <body>
     <header>
-      <h1>Page2Invoice</h1>
-      <p class="sub">Extract → edit → PDF</p>
+      <img src="icons/icon48.png" width="28" height="28" alt="" />
+      <h1>Page2Books</h1>
     </header>
 
-    <section id="status" class="card">
-      <p id="statusMsg" class="muted">Ready.</p>
-      <p id="pageUrl" class="mono"></p>
-      <button id="extractBtn" type="button">Extract from current page</button>
-    </section>
+    <nav class="tabs" role="tablist" aria-label="Mode">
+      <button
+        type="button"
+        role="tab"
+        id="tab-invoice"
+        class="tab"
+        aria-selected="true"
+        aria-controls="panel-invoice"
+      >
+        Invoice
+      </button>
+      <button
+        type="button"
+        role="tab"
+        id="tab-expense"
+        class="tab"
+        aria-selected="false"
+        aria-controls="panel-expense"
+        tabindex="-1"
+      >
+        Expense
+      </button>
+    </nav>
 
-    <section id="draft" class="card hidden">
+    <section id="status" class="status">
+      <svg class="status-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+        <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.15" />
+        <path fill="currentColor" d="M11.4 5.4 7 9.8 4.6 7.4l-.8.8L7 11.4l5.2-5.2z" />
+      </svg>
+      <p id="statusMsg">Ready.</p>
+      <button id="extractBtn" type="button">Extract</button>
+    </section>
+    <p id="pageUrl" class="mono" hidden></p>
+
+    <div id="panel-invoice" class="tab-panel" role="tabpanel" aria-labelledby="tab-invoice">
+    <section id="draft" class="hidden">
       <h2>Invoice draft</h2>
-      <div class="row2">
-        <label>Number<input id="invNumber" type="text" /></label>
-        <label>Date<input id="invDate" type="date" /></label>
+
+      <div class="parties">
+        <label>From<textarea id="invFrom" rows="4" placeholder="Your name / business"></textarea></label>
+        <label>Bill to<textarea id="invTo" rows="4" placeholder="Client name"></textarea></label>
       </div>
-      <label>From<textarea id="invFrom" rows="2" placeholder="Your name / business"></textarea></label>
-      <label>Bill to<textarea id="invTo" rows="2" placeholder="Client name"></textarea></label>
-      <div class="row2">
+
+      <div class="meta">
+        <label>Invoice #<input id="invNumber" type="text" /></label>
+        <label>Date<input id="invDate" type="date" /></label>
+        <label>Tax %<input id="invTax" type="number" min="0" step="0.1" value="0" /></label>
         <label>Currency
           <select id="invCurrency">
             <option value="KRW">KRW</option>
@@ -35,20 +67,99 @@
             <option value="OTHER">OTHER</option>
           </select>
         </label>
-        <label>Tax %<input id="invTax" type="number" min="0" step="0.1" value="0" /></label>
       </div>
 
-      <div class="lines-head">
-        <span>Line items</span>
-        <button id="addLineBtn" type="button" class="btn-secondary">Add line</button>
+      <div class="section-head">
+        <span>Items</span>
+        <button id="addLineBtn" type="button" class="btn-secondary">Add</button>
       </div>
-      <div id="lines"></div>
+      <div class="lines-wrap">
+        <div class="lines-head">
+          <span>Description</span>
+          <span>Qty</span>
+          <span>Unit price</span>
+          <span>Amount</span>
+          <span></span>
+        </div>
+        <div id="lines"></div>
+      </div>
 
       <div id="totals" class="totals"></div>
-      <label>Notes<textarea id="invNotes" rows="2"></textarea></label>
+      <label class="notes">Notes<textarea id="invNotes" rows="2"></textarea></label>
 
-      <button id="pdfBtn" type="button">Export PDF (print)</button>
+      <button id="pdfBtn" type="button" class="btn-pdf">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+          <path fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm0 1.5V8h4.5zM8 12h3.2a1.6 1.6 0 0 1 0 3.2H9.2V17H8zm1.2 2.2h1a.5.5 0 0 0 0-1h-1zM13 12h2.4c.9 0 1.6.7 1.6 1.6v1.8c0 .9-.7 1.6-1.6 1.6H13zm1.2 1.2v2.4h1.2a.4.4 0 0 0 .4-.4v-1.6a.4.4 0 0 0-.4-.4z" />
+        </svg>
+        Export PDF
+      </button>
     </section>
+    </div>
+
+    <div
+      id="panel-expense"
+      class="tab-panel"
+      role="tabpanel"
+      aria-labelledby="tab-expense"
+      hidden
+    >
+      <section id="expenseDraft">
+        <h2>Expense entry</h2>
+
+        <label class="field-block"
+          >Merchant<input id="expMerchant" type="text" placeholder="Store or vendor"
+        /></label>
+
+        <div class="meta">
+          <label>Date<input id="expDate" type="date" /></label>
+          <label>Amount<input id="expAmount" type="number" min="0" step="1" placeholder="0" /></label>
+          <label>Currency
+            <select id="expCurrency">
+              <option value="KRW">KRW</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="OTHER">OTHER</option>
+            </select>
+          </label>
+          <label>Category
+            <select id="expCategory">
+              <option value="">Select…</option>
+              <option value="saas">SaaS / 구독</option>
+              <option value="ads">광고</option>
+              <option value="office">사무 / 소모품</option>
+              <option value="travel">교통 / 출장</option>
+              <option value="meals">식대 / 접대</option>
+              <option value="fees">수수료</option>
+              <option value="other">기타</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="notes"
+          >Memo<textarea id="expMemo" rows="2" placeholder="Optional note"></textarea
+        ></label>
+
+        <div class="action-row">
+          <button id="saveExpenseBtn" type="button" class="btn-secondary">Save</button>
+          <button id="exportCsvBtn" type="button" class="btn-pdf">Export CSV</button>
+        </div>
+
+        <div class="section-head">
+          <span>Saved</span>
+          <span id="expenseCount" class="hint">0</span>
+        </div>
+        <div class="lines-wrap expense-lines">
+          <div class="lines-head expense-head">
+            <span>Date</span>
+            <span>Amount</span>
+            <span>Category</span>
+            <span>Merchant</span>
+            <span></span>
+          </div>
+          <div id="expenseList"></div>
+        </div>
+      </section>
+    </div>
 
     <script type="module" src="popup.js"></script>
   </body>

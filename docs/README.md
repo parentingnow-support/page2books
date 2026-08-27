@@ -1,4 +1,4 @@
-# Docs hub — Page2Invoice
+# Docs hub — Page2Books
 
 | Doc | Role |
 | --- | --- |

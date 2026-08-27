@@ -1,7 +1,7 @@
-# Page2Invoice — agent notes
+# Page2Books — agent notes
 
-- **Product:** Chrome MV3 popup — extract page → invoice draft in one click.
-- **Repo:** local → `parentingnow-support/page2invoice` (public): https://github.com/parentingnow-support/page2invoice
+- **Product:** Chrome MV3 popup — **Page2Books**: extract page → Invoice PDF or Expense CSV (tabs). D-04, D-05.
+- **Repo:** local → `parentingnow-support/page2books` (public): https://github.com/parentingnow-support/page2books
 - **Commit identity (required):** author/committer **only** `parentingnow <315293947+parentingnow-support@users.noreply.github.com>`. Never `wai-khkim`, `codingwalks`, `cursoragent`, or personal emails. Also never leave `Co-authored-by: Cursor <cursoragent@cursor.com>` in the message (GitHub treats it as a contributor). Hooks: `.githooks/pre-commit` + `.githooks/commit-msg`.
 - **Push auth:** local `.env` — `PARENTINGNOW_GH_TOKEN` (public push), `GH_TOKEN` defaults to parentingnow. Never commit.
 - **Tips:** Gumroad `$5` → https://parentingnow.gumroad.com/l/tip (`.github/FUNDING.yml`). KR bank payout via Gumroad; not BMC/GitHub Sponsors.

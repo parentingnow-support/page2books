@@ -1,9 +1,9 @@
 {
-  "name": "page2invoice",
+  "name": "page2books",
   "private": true,
   "type": "module",
-  "version": "0.1.0",
-  "description": "Turn the current page into an invoice draft in one click.",
+  "version": "0.2.0",
+  "description": "Invoice PDF and expense CSV from the current page — one click, no account.",
   "scripts": {
     "selfcheck": "node scripts/selfcheck.mjs",
     "test": "node scripts/selfcheck.mjs && node scripts/test_phase1.mjs",

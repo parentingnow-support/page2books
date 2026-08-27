@@ -1,5 +1,5 @@
 /**
- * Page2Invoice — service worker (MV3)
+ * Page2Books — service worker (MV3)
  * Popup owns the UI; keep this worker thin.
  */
 
