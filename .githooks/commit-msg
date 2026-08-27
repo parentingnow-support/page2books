@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
-if rg -qi 'Co-authored-by:[[:space:]]*Cursor|cursoragent@cursor\.com' "$1"; then
-  echo "Refuse commit: remove Co-authored-by Cursor / cursoragent trailer" >&2
+if rg -qi '^Co-authored-by:' "$1"; then
+  echo "Refuse commit: remove all Co-authored-by trailers (GitHub counts them as contributors)" >&2
+  exit 1
+fi
+if rg -qi 'cursoragent@cursor\.com' "$1"; then
+  echo "Refuse commit: remove cursoragent@cursor.com from the message" >&2
   exit 1
 fi
