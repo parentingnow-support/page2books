@@ -5,11 +5,11 @@ name="${GIT_AUTHOR_NAME:-$(git config --get user.name)}"
 email="${GIT_AUTHOR_EMAIL:-$(git config --get user.email)}"
 blocked_re='wai-khkim|codingwalks|cursoragent|kyunghokim|Cursor Agent|kyungho\.k@'
 if printf '%s\n%s\n' "$name" "$email" | rg -qi "$blocked_re"; then
-  echo "Refuse commit: author must be parentingnow (got: $name <$email>)" >&2
+  echo "Refuse commit: author must be parentingnow-support (got: $name <$email>)" >&2
   exit 1
 fi
-if ! printf '%s' "$name" | rg -qi '^parentingnow$'; then
-  echo "Refuse commit: user.name must be exactly 'parentingnow' (got: $name)" >&2
+if ! printf '%s' "$name" | rg -qi '^parentingnow-support$'; then
+  echo "Refuse commit: user.name must be exactly 'parentingnow-support' (got: $name)" >&2
   exit 1
 fi
 if ! printf '%s' "$email" | rg -qi 'parentingnow-support@users\.noreply\.github\.com|315293947\+parentingnow-support@users\.noreply\.github\.com'; then
